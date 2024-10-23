@@ -1,0 +1,15 @@
+1. Table queries
+CREATE TABLE Customer_Data (
+    Customer_Name VARCHAR(255) NOT NULL,
+    Customer_ID VARCHAR(18) NOT NULL,
+    Open_Date DATE NOT NULL,
+    Last_Consulted_Date DATE,
+    Vaccination_Type CHAR(5),
+    Doctor_Consulted VARCHAR(255),
+    State CHAR(5),
+    Country CHAR(5),
+    Post_Code INT,
+    Date_Of_Birth DATE,
+    Is_Active CHAR(1),
+    PRIMARY KEY (Customer_ID)
+);
