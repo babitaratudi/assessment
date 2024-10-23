@@ -1,0 +1,17 @@
+3. Validations
+-- Days since last consulted should be greater than 30
+ALTER TABLE Customer_Data_Extended
+ADD CONSTRAINT chk_days_since_last_consultation 
+CHECK (DATEDIFF(CURRENT_DATE, Last_Consulted_Date) > 30);
+
+-- For a valid user Customer name, Customer_id and Open_Date should not be null 
+ALTER TABLE Customer_Data_Extended
+ADD CONSTRAINT chk_customer_data CHECK (
+    Customer_Name IS NOT NULL AND 
+    Customer_ID IS NOT NULL AND 
+    Open_Date IS NOT NULL
+);
+
+-- Customer should be only active(A) or inactive(I)
+ALTER TABLE Customer_Data_Extended
+ADD CONSTRAINT chk_is_active CHECK (Is_Active IN ('A', 'I'));
